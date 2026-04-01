@@ -1,9 +1,7 @@
 Due to GitHub's file size limits, the datasets used for this project are hosted externally on Google Drive. 
 
-### Primary Dataset:
-*   **FaceForensics++ (Real & Fake Processed):** [Download Here](https://drive.google.com/drive/folders/1VIIWRLs6VBXRYKODgeOU7i6votLPPxT0?usp=sharing) *(~6GB)*
-### Additional Datasets (Optional):
-*   **Celeb-DF Fake:** [Download Here](https://drive.google.com/drive/folders/1SxCb_Wr7N4Wsc-uvjUl0i-6PpwYmwN65?usp=sharing)
-*   **Celeb-DF Real:** [Download Here](https://drive.google.com/drive/folders/1g97v9JoD3pCKA2TxHe8ZLRe4buX2siCQ?usp=sharing)
-*   **DFDC Fake:** [Download Here](https://drive.google.com/drive/folders/1yz3DBeFJvZ_QzWsyY7EwBNm7fx4MiOfF?usp=sharing)
-*   **DFDC Real:** [Download Here](https://drive.google.com/drive/folders/1wN3ZOd0WihthEeH__Lmj_ENhoXJN6U11?usp=sharing)
+FaceForensics++ (Real & Fake Processed): https://drive.google.com/drive/folders/1VIIWRLs6VBXRYKODgeOU7i6votLPPxT0?usp=sharing
+Celeb-DF Fake: https://drive.google.com/drive/folders/1SxCb_Wr7N4Wsc-uvjUl0i-6PpwYmwN65?usp=sharing
+Celeb-DF Real: https://drive.google.com/drive/folders/1g97v9JoD3pCKA2TxHe8ZLRe4buX2siCQ?usp=sharing
+DFDC Fake: https://drive.google.com/drive/folders/1yz3DBeFJvZ_QzWsyY7EwBNm7fx4MiOfF?usp=sharing
+DFDC Real: https://drive.google.com/drive/folders/1wN3ZOd0WihthEeH__Lmj_ENhoXJN6U11?usp=sharing
