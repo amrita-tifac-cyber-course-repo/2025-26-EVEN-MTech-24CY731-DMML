@@ -1,9 +1,7 @@
-# DMML
-
 # 🔐 Zero-Day Phishing URL Detection Using Machine Learning and Adversarial URL Analysis
 > AI & ML/DL Applications in Cybersecurity – DMML Mini Project
 
-## 1. Project Title
+## Project Title
 
 **Zero-Day Phishing URL Detection Using Machine Learning and Adversarial URL Analysis**
 
@@ -14,7 +12,18 @@ This project focuses on detecting zero-day phishing URLs using machine learning 
 
 ---
 
-## 2. Team Details
+## Features
+- Zero-day phishing URL detection
+- Adversarial URL detection (typosquatting, homoglyph attacks)
+- Machine learning based classification
+- Random Forest and Logistic Regression models
+- Feature extraction from URLs
+- Streamlit web application for prediction
+- Multi-layer phishing detection system
+
+---
+
+## Team Details
 
 **Team Number:** DMML#06
 
@@ -25,7 +34,7 @@ This project focuses on detecting zero-day phishing URLs using machine learning 
 
 ---
 
-## 3. Problem Statement
+## Problem Statement
 
 Phishing attacks are one of the most common cybersecurity threats where attackers create malicious URLs that imitate legitimate websites to steal sensitive information such as login credentials, banking details, and personal data. Traditional phishing detection techniques rely on blacklist databases and signature-based detection methods, which are ineffective in detecting zero-day phishing attacks because newly generated phishing URLs are not present in blacklist databases.
 
@@ -33,7 +42,7 @@ This project aims to detect zero-day phishing URLs using adversarial URL analysi
 
 ---
 
-## 4. Objectives
+## Objectives
 
 The main objectives of this project are:
 
@@ -46,7 +55,7 @@ The main objectives of this project are:
 
 ---
 
-## 5. Dataset Details
+## Dataset Details
 
 **Dataset Name:** Phishing and Legitimate URL Dataset
 
@@ -73,7 +82,7 @@ The main objectives of this project are:
 
 ---
 
-## 6. Methodology
+## Methodology
 
 **Techniques Used:**
 
@@ -103,7 +112,7 @@ The main objectives of this project are:
 
 ---
 
-## 7. Tools & Technologies
+## Tools & Technologies
 
 **Programming Language:**
 
@@ -122,18 +131,17 @@ The main objectives of this project are:
 
 ---
 
-## 8. How to Run the Project
+## How to Run the Project
 
 Clone the repository:
-
 ```bash
-git clone https://github.com/amrita-tifac-cyber-course-repo/2025-26-EVEN-MTech-24CY731-DMML/tree/main/projects/DMML%2306
+git clone https://github.com/amrita-tifac-cyber-course-repo/2025-26-EVEN-MTech-24CY731-DMML
 ```
 
-Navigate to source folder:
+Navigate to project folder:
 
 ```bash
-cd DMML#06/src
+cd 2025-26-EVEN-MTech-24CY731-DMML/projects/DMML#06/src
 ```
 
 Install dependencies:
