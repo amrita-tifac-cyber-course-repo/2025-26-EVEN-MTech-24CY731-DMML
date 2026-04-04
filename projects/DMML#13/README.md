@@ -26,6 +26,7 @@ Link: https://drive.google.com/drive/folders/1WBXphGoEC7KFFZyORsOcQIMB2lVC7gp2?u
 - `preprocessing_flowchart1.png`: Details on how the hallucination dataset was cleaned and balanced.
 - `model_arch.png`: Technical diagram of the Self-Critique NLI core.
 - `Datasets.png`: Combination of all the datasets used.
+- `prediction_flowchart.png`: To make the final decision on hallucinations, the real-time prediction pipeline uses topic-aware stochastic sampling and NLI-based consistency scoring.
 
 ### Config/
 - `requirements.txt`: List of all Python dependencies required to run the engine.
