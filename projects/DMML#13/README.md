@@ -24,7 +24,7 @@ Link: https://drive.google.com/drive/folders/1WBXphGoEC7KFFZyORsOcQIMB2lVC7gp2?u
 ### Visuals/
 - `system_architecture_flowchart1.png`: A high-level view of the Multi-Stage Verification Pipeline.
 - `preprocessing_flowchart1.png`: Details on how the hallucination dataset was cleaned and balanced.
-- `model_arch.jpg`: Technical diagram of the Self-Critique NLI core.
+- `model_arch.png`: Technical diagram of the Self-Critique NLI core.
 - `Datasets.png`: Combination of all the datasets used.
 
 ### Config/
