@@ -12,17 +12,6 @@ This project focuses on detecting zero-day phishing URLs using machine learning 
 
 ---
 
-## Features
-- Zero-day phishing URL detection
-- Adversarial URL detection (typosquatting, homoglyph attacks)
-- Machine learning based classification
-- Random Forest and Logistic Regression models
-- Feature extraction from URLs
-- Streamlit web application for prediction
-- Multi-layer phishing detection system
-
----
-
 ## Team Details
 
 **Team Number:** DMML#06
