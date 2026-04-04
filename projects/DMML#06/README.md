@@ -121,7 +121,7 @@ The main objectives of this project are:
 Clone the repository:
 
 ```bash
-git clone <repository-link>
+git clone https://github.com/amrita-tifac-cyber-course-repo/2025-26-EVEN-MTech-24CY731-DMML/tree/main/projects/DMML%2306
 ```
 
 Navigate to source folder:
