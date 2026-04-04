@@ -46,7 +46,7 @@ The main objectives of this project are:
 
 **Dataset Sources:**
 
-* PhishTank – https://phishtank.org
+* PhishTank – https://phishtank.org/developer_info.php
 * Tranco Top 1M – https://tranco-list.eu
 
 **Features Description:**
