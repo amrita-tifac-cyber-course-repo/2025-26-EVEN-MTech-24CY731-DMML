@@ -7,11 +7,6 @@
 
 ---
 
-## Overview
-This project focuses on detecting zero-day phishing URLs using machine learning and adversarial URL analysis. Traditional phishing detection systems rely on blacklist-based detection, which cannot detect newly generated phishing URLs. This project proposes a multi-layer phishing URL detection system that combines adversarial detection techniques with machine learning models to improve detection accuracy and identify previously unseen phishing URLs.
-
----
-
 ## Team Details
 
 **Team Number:** DMML#06
@@ -99,6 +94,69 @@ The main objectives of this project are:
 
 ![Workflow](images/workflow.png)
 
+### Model Evaluation
+
+#### Model Performance Metrics
+
+| Metric | Logistic Regression | Random Forest (Final Model) |
+|-------|---------------------|------------------------------|
+| Accuracy | 87.81% | 96.65% |
+| Precision | 87.95% | 97.19% |
+| Recall | 87.62% | 96.07% |
+| F1-Score | 87.79% | 96.63% |
+| AUC-ROC | 0.9444 | 0.9943 |
+| 5-Fold CV Accuracy | 0.8755 ± 0.0026 | 0.9669 ± 0.0012 |
+| False Positive Rate | ~12% | ~2.8% |
+
+#### Confusion Matrix
+
+![Confusion Matrix](images/confusion_matrix.png)
+
+#### ROC Curve
+
+![ROC Curve](images/roc_curve.png)
+
+#### Feature Importance
+
+![Feature Importance](images/feature_importance.png)
+
+#### Test Results by URL Category
+
+| Test Category | Detection Rate | Primary Layer | Detection Reason |
+|---------------|---------------|---------------|------------------|
+| Adversarial / Typosquatting | 100% | Layer 1 | Typosquatting + character substitution |
+| Homoglyph Style | 100% | Layer 1 | Visual character lookalikes |
+| IP Address URLs | 100% | Layer 1 | Excessive subdomains |
+| Brand Impersonation | 100% | Layer 2 | Brand + phishing keyword |
+| Long Phishing URLs | 100% | Layer 2/3 | Brand keyword or ML prediction |
+| URL Shortening | 100% | Layer 3 | ML prediction |
+| Phishing-like URLs | 100% | Layer 2/3 | Brand keyword or ML prediction |
+| Legitimate URLs | 100% correct | Layer 3 | Correct classification |
+| Suspicious but Legitimate | Partial | Layer 3 | ML probability threshold |
+
+#### Adversarial Layer Zero-Day Detection Results
+
+| Attack Type | Example URL | Detected | Detection Reason |
+|------------|-------------|----------|------------------|
+| Leet-speak | g00gle.com | Yes | Character substitution |
+| Leet-speak | paypa1.com | Yes | Character substitution |
+| Repeated chars | gooooogle.com | Yes | Repeated characters |
+| Repeated chars | faceeboook.com | Yes | Typosquatting |
+| Punycode | xn--pple-43d.com | Yes | Punycode encoding |
+| Domain shadowing | paypal.com.secure-login.com | Yes | Excessive subdomains |
+
+#### Comparison with State-of-the-Art Methods
+
+| Method | Accuracy | AUC-ROC | Zero-Day Capable | Interpretable |
+|-------|---------|---------|------------------|---------------|
+| PhishGuard (This Work) | 96.65% | 0.9943 | Yes | Yes |
+| WebPhish (CNN) | 98.10% | N/A | No | No |
+| Boolean Algebra | 89.10% | 0.91 | No | Yes |
+| RNN-LSTM | 98.70% | N/A | No | No |
+| GRU | 99.18% | N/A | No | No |
+| URLNet | 97.20% | N/A | No | No |
+| Reference Random Forest | 96.70% | N/A | No | No |
+
 ---
 
 ## Tools & Technologies
@@ -147,93 +205,5 @@ python app.py
 
 ---
 
-## Results
-
-### Model Performance Metrics
-
-| Metric | Logistic Regression | Random Forest (Final Model) |
-|-------|---------------------|------------------------------|
-| Accuracy | 87.81% | 96.65% |
-| Precision | 87.95% | 97.19% |
-| Recall | 87.62% | 96.07% |
-| F1-Score | 87.79% | 96.63% |
-| AUC-ROC | 0.9444 | 0.9943 |
-| 5-Fold CV Accuracy | 0.8755 ± 0.0026 | 0.9669 ± 0.0012 |
-| False Positive Rate | ~12% | ~2.8% |
-
-### Confusion Matrix
-
-![Confusion Matrix](images/confusion_matrix.png)
-
-### ROC Curve
-
-![ROC Curve](images/roc_curve.png)
-
-### Feature Importance
-
-![Feature Importance](images/feature_importance.png)
-
-### Test Results by URL Category
-
-| Test Category | Detection Rate | Primary Layer | Detection Reason |
-|---------------|---------------|---------------|------------------|
-| Adversarial / Typosquatting | 100% | Layer 1 | Typosquatting + character substitution |
-| Homoglyph Style | 100% | Layer 1 | Visual character lookalikes |
-| IP Address URLs | 100% | Layer 1 | Excessive subdomains |
-| Brand Impersonation | 100% | Layer 2 | Brand + phishing keyword |
-| Long Phishing URLs | 100% | Layer 2/3 | Brand keyword or ML prediction |
-| URL Shortening | 100% | Layer 3 | ML prediction |
-| Phishing-like URLs | 100% | Layer 2/3 | Brand keyword or ML prediction |
-| Legitimate URLs | 100% correct | Layer 3 | Correct classification |
-| Suspicious but Legitimate | Partial | Layer 3 | ML probability threshold |
-
-### Adversarial Layer Zero-Day Detection Results
-
-| Attack Type | Example URL | Detected | Detection Reason |
-|------------|-------------|----------|------------------|
-| Leet-speak | g00gle.com | Yes | Character substitution |
-| Leet-speak | paypa1.com | Yes | Character substitution |
-| Repeated chars | gooooogle.com | Yes | Repeated characters |
-| Repeated chars | faceeboook.com | Yes | Typosquatting |
-| Punycode | xn--pple-43d.com | Yes | Punycode encoding |
-| Domain shadowing | paypal.com.secure-login.com | Yes | Excessive subdomains |
-
-### Comparison with State-of-the-Art Methods
-
-| Method | Accuracy | AUC-ROC | Zero-Day Capable | Interpretable |
-|-------|---------|---------|------------------|---------------|
-| PhishGuard (This Work) | 96.65% | 0.9943 | Yes | Yes |
-| WebPhish (CNN) | 98.10% | N/A | No | No |
-| Boolean Algebra | 89.10% | 0.91 | No | Yes |
-| RNN-LSTM | 98.70% | N/A | No | No |
-| GRU | 99.18% | N/A | No | No |
-| URLNet | 97.20% | N/A | No | No |
-| Reference Random Forest | 96.70% | N/A | No | No |
-
----
-
-## Project Structure
-
-```
-DMML#06/
-│
-├── datasets/
-├── images/
-├── src/
-├── README.md
-```
-
----
-
 ## Conclusion
-
-This project developed a multi-layer zero-day phishing URL detection system using adversarial URL analysis and machine learning techniques. The layered detection approach improves detection of zero-day phishing URLs and adversarial attacks such as homoglyph attacks, typosquatting, punycode domains, IP-based URLs, and subdomain attacks. The Random Forest model achieved high accuracy and the system can be extended for real-time phishing detection applications.
-
----
-
-## Future Work
-- Deploy as browser extension
-- Real-time phishing detection API
-- Deep learning based phishing detection
-- Integration with email phishing detection systems
-- WHOIS and DNS feature integration
+This project successfully developed a multi-layer zero-day phishing URL detection system using machine learning and adversarial URL analysis techniques.
