@@ -63,7 +63,8 @@ Model Evaluation — Classification report (precision, recall, F1), confusion ma
 Programming Language: Python 3.12
 Libraries:
 
-Scikit-learn (TfidfVectorizer, LogisticRegression, cross_val_score, metrics)
-Pandas, NumPy
-Matplotlib, Seaborn
-Re, String (preprocessing)
+scikit-learn → ML model + TF-IDF
+NumPy → numerical operations
+Pandas → dataset handling
+re (regex) → text preprocessing
+Matplotlib & Seaborn → visualization
